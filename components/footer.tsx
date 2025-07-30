@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Linkedin, Instagram, Twitter, Mail, MapPin } from "lucide-react"
+import Link from "next/link";
+import { Linkedin, Instagram, Twitter, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const footerLinks = {
@@ -21,13 +22,13 @@ const Footer = () => {
       { name: "Privacy Policy", href: "#" },
       { name: "Terms of Service", href: "#" },
     ],
-  }
+  };
 
   const socialLinks = [
     { icon: <Linkedin className="w-5 h-5" />, href: "#", name: "LinkedIn" },
     { icon: <Instagram className="w-5 h-5" />, href: "#", name: "Instagram" },
     { icon: <Twitter className="w-5 h-5" />, href: "#", name: "Twitter" },
-  ]
+  ];
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
@@ -36,16 +37,17 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Mindnetik
-              </span>
+              <Image
+                src="/images/logo-white.svg"
+                alt="Mindnetik Logo"
+                width={150}
+                height={100}
+                className="transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-gray-300 mb-4 max-w-md">
-              Empowering innovation and redefining solutions through human-centric technology and cutting-edge software
-              development.
+              Empowering innovation and redefining solutions through
+              human-centric technology and cutting-edge software development.
             </p>
             <div className="flex items-center text-gray-300 mb-2">
               <MapPin className="w-4 h-4 mr-2 text-primary" />
@@ -63,7 +65,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-primary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -77,7 +82,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-primary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -91,7 +99,10 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-primary transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-primary transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -120,7 +131,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -16,6 +16,9 @@ const config: Config = {
         primary: "#1169F3",
         secondary: "#C11DFF",
         dark: "#0B0F19",
+        gold: "#FFD700",
+        testimonialCardBg: "#E6E0F8", // Light purple for testimonial cards
+        testimonialCardText: "#333333", // Darker text for light background
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -35,8 +38,8 @@ const config: Config = {
           foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "0 84.2% 60.2%",
+          foreground: "0 0% 98%",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -44,7 +47,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out",
@@ -83,6 +87,6 @@ const config: Config = {
     },
   },
   plugins: [],
-}
+};
 
-export default config
+export default config;

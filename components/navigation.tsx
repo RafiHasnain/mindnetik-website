@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,18 +71,17 @@ const Navigation = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20 ">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-xl font-manrope">
-                  M
-                </span>
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-manrope tracking-wide">
-                MINDNETIK
-              </span>
+            <Link href="/" className="flex items-center space-x-3 group ">
+              <Image
+                src="/images/logo-white.svg"
+                alt="Mindnetik Logo"
+                width={120}
+                height={100}
+                className="transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
 
             {/* Custom Hamburger Menu - Smooth Cross Animation */}

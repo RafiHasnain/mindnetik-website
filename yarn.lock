@@ -3,9 +3,9 @@
 
 
 "@0no-co/graphql.web@^1.0.13", "@0no-co/graphql.web@^1.0.8":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@0no-co/graphql.web/-/graphql.web-1.1.2.tgz#9af8deaf3f236c1c6ee99cc5349051475e5dcc83"
-  integrity sha512-N2NGsU5FLBhT8NZ+3l2YrzZSHITjNXNuDhC4iDiikv0IujaJ0Xc6xIxQZ/Ek3Cb+rgPjnLHYyJm11tInuJn+cw==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@0no-co/graphql.web/-/graphql.web-1.2.0.tgz#296d00581bfaaabfda1e976849d927824aaea81b"
+  integrity sha512-/1iHy9TTr63gE1YcR5idjx8UREz1s0kFhydf3bBLCXyqjhkIc6igAzTOx3zPifCwFR87tsh/4Pa9cNts6d2otw==
 
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
@@ -2432,9 +2432,9 @@
     undici-types "~7.8.0"
 
 "@types/node@^22":
-  version "22.16.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.16.5.tgz#cc46ac3994cd957000d0c11095a0b1dae2ea2368"
-  integrity sha512-bJFoMATwIGaxxx8VJPeM8TonI8t579oRvgAuT8zFugJsJZgzqv0Fu8Mhp68iecjzG7cnN3mO2dJQ5uUM2EFrgQ==
+  version "22.17.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.17.0.tgz#e8c9090e957bd4d9860efb323eb92d297347eac7"
+  integrity sha512-bbAKTCqX5aNVryi7qXVMi+OkB3w/OyblodicMbvE38blyAz7GxXf6XYhklokijuPwwVg9sDLKRxt0ZHXQwZVfQ==
   dependencies:
     undici-types "~6.21.0"
 
@@ -2995,7 +2995,12 @@ camera-controls@^3.1.0:
   resolved "https://registry.yarnpkg.com/camera-controls/-/camera-controls-3.1.0.tgz#06735c0022020a941e813492499e3c110a890b0a"
   integrity sha512-w5oULNpijgTRH0ARFJJ0R5ct1nUM3R3WP7/b8A6j9uTGpRfnsypc/RBMPQV8JQDPayUe37p/TZZY1PcUr4czOQ==
 
-caniuse-lite@^1.0.30001579, caniuse-lite@^1.0.30001702, caniuse-lite@^1.0.30001726:
+caniuse-lite@^1.0.30001579:
+  version "1.0.30001731"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001731.tgz#277c07416ea4613ec564e5b0ffb47e7b60f32e2f"
+  integrity sha512-lDdp2/wrOmTRWuoB5DpfNkC0rJDU8DqRa6nYL6HK6sytw70QMopt/NIc/9SM7ylItlBWfACXk0tEn37UWM/+mg==
+
+caniuse-lite@^1.0.30001702, caniuse-lite@^1.0.30001726:
   version "1.0.30001727"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001727.tgz#22e9706422ad37aa50556af8c10e40e2d93a8b85"
   integrity sha512-pB68nIHmbN6L/4C6MH1DokyR3bYqFwjaSs/sWDHGj4CTcFtQUQMuJftVwWkXq7mNWOybD3KhUv3oWHoGxgP14Q==
@@ -5800,6 +5805,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -5818,6 +5824,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     strip-ansi "^7.0.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==

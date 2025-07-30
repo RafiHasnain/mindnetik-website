@@ -121,7 +121,12 @@ a {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(17, 105, 243, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(17, 105, 243, 0.1),
+    transparent
+  );
   transition: left 0.5s ease-in-out;
 }
 
@@ -209,7 +214,11 @@ iframe {
 /* Ensure seamless edge blending */
 .seamless-blend {
   mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 100%
+  );
 }
 
 /* Custom animations */
@@ -367,4 +376,100 @@ iframe {
 
 .group:hover .group-hover\:translate-x-2 {
   transform: translateX(0.5rem);
+}
+
+/* Enhanced floating animation for the about image */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(0px);
+  }
+  75% {
+    transform: translateY(-8px) translateX(-4px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Tech Stack Scrolling Animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-scroll-left:hover,
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+/* Testimonial Bubble Shape */
+.testimonial-bubble {
+  border-radius: 2rem; /* More pronounced rounded corners */
+  position: relative;
+  /* Define custom properties for background colors to be used by pseudo-element */
+  --bubble-bg-default: theme("colors.testimonialCardBg");
+  --bubble-bg-hover: theme("colors.primary");
+  background-color: var(--bubble-bg-default); /* Default background */
+  transition: background-color 0.3s ease-out, transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+}
+
+.testimonial-bubble:hover {
+  background-color: var(--bubble-bg-hover); /* Hover background */
+}
+
+.testimonial-bubble::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem; /* Length of the tail */
+  top: 1.5rem; /* Aligns with the top of the content/quote icon */
+  width: 0;
+  height: 0;
+  border-top: 1rem solid transparent; /* Height of the tail */
+  border-bottom: 1rem solid transparent; /* Height of the tail */
+  border-right: 1.5rem solid var(--bubble-bg-default); /* Default tail color */
+  transition: border-right-color 0.3s ease-out;
+  z-index: 0; /* Ensure it's behind the content */
+}
+
+/* Hover state for the testimonial bubble tail */
+.testimonial-bubble:hover::before {
+  border-right-color: var(--bubble-bg-hover); /* Change tail color on hover */
+}
+
+/* Adjust quote icon position for the new shape */
+.testimonial-bubble .lucide-quote {
+  /* Current: absolute top-6 left-6 */
+  /* This positioning works well with the pl-16 on the text,
+     keeping the icon within the card's visual bounds and aligned. */
 }
