@@ -11,6 +11,7 @@ import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import TechStackSection from "@/components/tech-stack-section";
 import TestimonialGrid from "@/components/testimonial-grid";
+import Banner from "@/components/banner";
 
 const HomePage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -56,7 +57,15 @@ const HomePage = () => {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <HeroSection />
+      {/* <HeroSection /> */}
+      <Banner
+        title={""}
+        description={` Leading the future of software development and digital
+                transformation with human-centric technology.`}
+        image={""}
+        video={"/videos/hero-video.webm"}
+        isMain
+      />
 
       {/* About Us Section */}
       <AboutSection />

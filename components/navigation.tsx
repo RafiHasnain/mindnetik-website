@@ -91,13 +91,13 @@ const Navigation = () => {
               className="relative w-12 h-12 flex items-center justify-end group focus:outline-none"
               aria-label="Toggle menu"
             >
-              <div className="relative w-8 h-6 flex items-center justify-end">
+              <div className="relative w-8 h-5 flex items-center justify-end">
                 {/* Top line */}
                 <span
                   className={`absolute h-0.5 bg-white transition-all duration-700 ease-in-out ${
                     isOpen
                       ? "w-7 rotate-45 top-1/2 right-0.5 transform -translate-y-0.5"
-                      : "w-8 rotate-0 top-1 right-0"
+                      : "w-10 rotate-0 top-1 right-0"
                   }`}
                 />
                 {/* Bottom line */}
@@ -105,7 +105,7 @@ const Navigation = () => {
                   className={`absolute h-0.5 bg-white transition-all duration-700 ease-in-out ${
                     isOpen
                       ? "w-7 -rotate-45 top-1/2 right-0.5 transform -translate-y-0.5"
-                      : "w-6 rotate-0 bottom-1 right-0"
+                      : "w-7 rotate-0 bottom-1 right-0"
                   }`}
                 />
               </div>
