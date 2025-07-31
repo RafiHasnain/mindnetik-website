@@ -64,7 +64,7 @@ html {
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -73,12 +73,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-primary to-secondary rounded-full;
+  @apply bg-primary rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   @apply opacity-80;
-}
+} */
 
 /* Enhanced focus states */
 button:focus-visible,
