@@ -26,15 +26,18 @@ const Banner = ({ image, video, title, description, isMain = false }: any) => {
       }}
     >
       {video && (
-        <video
+       <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
           loop
           muted
+          playsInline
+          preload="auto"
         >
           <source src={video} type="video/webm" />
           Your browser does not support the video tag.
-        </video>
+      </video>
+
       )}
       <div className="absolute inset-0 bg-black/40" />
       <div
