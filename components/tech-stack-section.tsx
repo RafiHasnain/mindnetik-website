@@ -60,7 +60,7 @@ const TechStackSection = () => {
             }`}
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-6 font-manrope leading-tight">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
                 Yes!
               </span>{" "}
               <span className="text-white">We cover your tech stack.</span>
