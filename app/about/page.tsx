@@ -1,5 +1,5 @@
-import { Globe, Target, Eye, Users, MapPin } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Globe, Target, Eye, Users, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const AboutPage = () => {
   const values = [
@@ -21,35 +21,52 @@ const AboutPage = () => {
       description:
         "Innovation, integrity, collaboration, and a relentless focus on delivering value to our clients and communities.",
     },
-  ]
+  ];
 
   const locations = [
     {
+      city: "Dhaka",
+      country: "Bangladesh",
+      description:
+        "Our main office, serving the rapidly growing tech ecosystem in the region.",
+      icon: <MapPin className="w-6 h-6" />,
+    },
+    {
+      city: "Kuala Lumpur",
+      country: "Malaysia",
+      description:
+        "Our asia-pacific operations hub, connecting sus to the world's leading technology companies and talent.",
+      icon: <MapPin className="w-6 h-6" />,
+    },
+    {
       city: "Dubai",
       country: "UAE",
-      description: "Our Middle East headquarters, serving the rapidly growing tech ecosystem in the region.",
+      description:
+        "Our Middle East headquarters, serving the rapidly growing tech ecosystem in the region.",
       icon: <MapPin className="w-6 h-6" />,
     },
     {
       city: "Silicon Valley",
       country: "USA",
-      description: "Our innovation hub, connecting us to the world's leading technology companies and talent.",
+      description:
+        "Our innovation hub, connecting us to the world's leading technology companies and talent.",
       icon: <MapPin className="w-6 h-6" />,
     },
-  ]
+  ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="pt-40 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
               About Mindnetik
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-              We are a forward-thinking software and digital transformation company dedicated to creating technology
-              solutions that put humans at the center of innovation.
+              We are a forward-thinking software and digital transformation
+              company dedicated to creating technology solutions that put humans
+              at the center of innovation.
             </p>
           </div>
         </div>
@@ -65,9 +82,15 @@ const AboutPage = () => {
                 className="bg-gray-900 border-gray-700 hover:border-primary transition-all duration-300"
               >
                 <CardContent className="p-8 text-center">
-                  <div className="text-primary mb-6 flex justify-center">{value.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                  <div className="text-primary mb-6 flex justify-center">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {value.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -84,17 +107,22 @@ const AboutPage = () => {
                 Our Story
               </h2>
               <p className="text-lg text-gray-300 mb-6">
-                Founded with the belief that technology should amplify human capabilities rather than replace them,
-                Mindnetik emerged from a vision to create software solutions that truly understand and serve human
-                needs.
+                Founded with the belief that technology should amplify human
+                capabilities rather than replace them, Mindnetik emerged from a
+                vision to create software solutions that truly understand and
+                serve human needs.
               </p>
               <p className="text-lg text-gray-300 mb-6">
-                Our journey began with a simple observation: while technology was advancing rapidly, many solutions were
-                becoming increasingly disconnected from the people they were meant to serve. We set out to change that.
+                Our journey began with a simple observation: while technology
+                was advancing rapidly, many solutions were becoming increasingly
+                disconnected from the people they were meant to serve. We set
+                out to change that.
               </p>
               <p className="text-lg text-gray-300">
-                Today, we combine cutting-edge technologies like AI, automation, and cloud computing with deep human
-                insights to create solutions that are not just powerful, but also intuitive, accessible, and meaningful.
+                Today, we combine cutting-edge technologies like AI, automation,
+                and cloud computing with deep human insights to create solutions
+                that are not just powerful, but also intuitive, accessible, and
+                meaningful.
               </p>
             </div>
             <div className="relative">
@@ -114,8 +142,8 @@ const AboutPage = () => {
               Global Presence
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              With offices spanning continents, we bring together diverse perspectives and expertise to deliver
-              world-class solutions.
+              With offices spanning continents, we bring together diverse
+              perspectives and expertise to deliver world-class solutions.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -128,11 +156,15 @@ const AboutPage = () => {
                   <div className="flex items-center mb-4">
                     <div className="text-primary mr-3">{location.icon}</div>
                     <div>
-                      <h3 className="text-2xl font-bold">{location.city}</h3>
+                      <h3 className="text-2xl text-white font-bold">
+                        {location.city}
+                      </h3>
                       <p className="text-primary">{location.country}</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{location.description}</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    {location.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -148,34 +180,42 @@ const AboutPage = () => {
               Human-First Technology
             </h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Our approach to technology development is fundamentally different. We start with understanding human
-              needs, behaviors, and aspirations, then build technology that serves those needs.
+              Our approach to technology development is fundamentally different.
+              We start with understanding human needs, behaviors, and
+              aspirations, then build technology that serves those needs.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">User-Centric Design</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">
+                  User-Centric Design
+                </h3>
                 <p className="text-gray-300">
-                  Every solution we create is designed with the end user in mind, ensuring intuitive and meaningful
-                  interactions.
+                  Every solution we create is designed with the end user in
+                  mind, ensuring intuitive and meaningful interactions.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Ethical AI</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">
+                  Ethical AI
+                </h3>
                 <p className="text-gray-300">
-                  We develop AI systems that are transparent, fair, and designed to augment human capabilities
-                  responsibly.
+                  We develop AI systems that are transparent, fair, and designed
+                  to augment human capabilities responsibly.
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-gray-800 border-gray-700">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Inclusive Innovation</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">
+                  Inclusive Innovation
+                </h3>
                 <p className="text-gray-300">
-                  Our solutions are built to be accessible and beneficial to diverse communities and use cases.
+                  Our solutions are built to be accessible and beneficial to
+                  diverse communities and use cases.
                 </p>
               </CardContent>
             </Card>
@@ -183,7 +223,7 @@ const AboutPage = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

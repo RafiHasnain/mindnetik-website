@@ -48,10 +48,10 @@ const Navigation = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "#", label: "About Us" },
-    { href: "#", label: "Services" },
-    { href: "#", label: "Products" },
-    { href: "#", label: "Contact" },
+    { href: "/about", label: "About Us" },
+    { href: "/services", label: "Services" },
+    { href: "/products", label: "Products" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const socialLinks = [
@@ -128,9 +128,9 @@ const Navigation = () => {
         />
 
         {/* Menu Content */}
-        <div className="relative w-full h-full flex">
+        <div className="relative w-full h-full flex flex-col sm:flex-row md:flex-row lg:flex-row sm:mt-16 md:mt-0 lg:mt-4">
           {/* Left Side - Navigation */}
-          <div className="flex-1 flex items-center justify-start pl-8 sm:pl-16 lg:pl-24">
+          <div className="flex-1 flex items-center justify-center  ">
             <div className="space-y-8">
               {navItems.map((item, index) => (
                 <div
@@ -174,7 +174,7 @@ const Navigation = () => {
           />
 
           {/* Right Side - Contact Information */}
-          <div className="flex-1 flex items-center justify-end pr-8 sm:pr-16 lg:pr-24">
+          <div className="flex-1 flex items-center justify-center  ">
             <div
               className={`space-y-8 transform transition-all duration-700 ease-out ${
                 isOpen
