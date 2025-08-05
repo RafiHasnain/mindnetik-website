@@ -1,5 +1,6 @@
 import { Globe, Target, Eye, Users, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { InternationalFootprint } from "@/components/international-footprint";
 
 const AboutPage = () => {
   const values = [
@@ -133,6 +134,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      <InternationalFootprint />
 
       {/* Global Presence */}
       <section className="py-20 bg-gray-800">
