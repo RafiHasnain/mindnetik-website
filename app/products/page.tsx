@@ -2,98 +2,57 @@ import { Zap, Brain, Shield, BarChart, Cloud, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 const ProductsPage = () => {
   const products = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "MindAI Analytics",
+      title: "MindERP",
       description:
-        "Advanced AI-powered analytics platform that transforms raw data into actionable business insights.",
-      status: "Available",
-      category: "AI & Analytics",
-      features: [
-        "Real-time data processing",
-        "Predictive modeling",
-        "Custom dashboards",
-        "API integration",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "MindERP is a fully modular enterprise management suite that simplifies and automates key business processes.",
+      image: "/images/projects/ERP.png",
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "AutoFlow Pro",
+      title: "MindEDU",
       description:
-        "Intelligent workflow automation suite that streamlines business processes and increases efficiency.",
-      status: "Available",
-      category: "Automation",
-      features: [
-        "Visual workflow builder",
-        "Multi-system integration",
-        "Performance monitoring",
-        "Custom triggers",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "MindEdu offers an end-to-end solution for educational institutions, enhancing efficiency and transparency.",
+      image: "/images/projects/EDU.png",
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "SecureNet Guardian",
+      title: "MindHEALTH",
       description:
-        "Comprehensive cybersecurity platform with AI-driven threat detection and response capabilities.",
-      status: "Coming Soon",
-      category: "Security",
-      features: [
-        "Real-time threat detection",
-        "Automated response",
-        "Compliance reporting",
-        "Risk assessment",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "MindHealth streamlines healthcare administration for better patient outcomes and operational efficiency.",
+      image: "/images/projects/HEALTH.png",
     },
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: "CloudSync Enterprise",
+      title: "MindPAY OneCard",
       description:
-        "Multi-cloud management platform for seamless cloud infrastructure orchestration.",
-      status: "Beta",
-      category: "Cloud",
-      features: [
-        "Multi-cloud support",
-        "Cost optimization",
-        "Auto-scaling",
-        "Disaster recovery",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "indPay OneCard is a smart, app-based platform for seamless payments and controlled access.",
+      image: "/images/projects/PAY.png",
     },
     {
-      icon: <BarChart className="w-8 h-8" />,
-      title: "DataViz Studio",
+      title: "MindGATE",
       description:
-        "Interactive data visualization tool that creates stunning charts and reports from any data source.",
-      status: "Available",
-      category: "Analytics",
-      features: [
-        "Drag-and-drop interface",
-        "Real-time updates",
-        "Custom themes",
-        "Export options",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "MindGate revolutionizes digital events through interactive, immersive experiences.",
+      image: "/images/projects/GATE.png",
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: "TeamSync Collaboration",
+      title: "MindCLOUD",
       description:
-        "Next-generation collaboration platform designed for remote and hybrid teams.",
-      status: "Coming Soon",
-      category: "Collaboration",
-      features: [
-        "Video conferencing",
-        "Project management",
-        "File sharing",
-        "Team analytics",
-      ],
-      image: "/placeholder.svg?height=200&width=400",
+        "MindCloud offers high-performance cloud hosting and continuous DevOps support for mission-critical applications.",
+      image: "/images/projects/CLOUD.png",
+    },
+    {
+      title: "MindCHAIN",
+      description:
+        "MindChain brings blockchain technology to streamline operations and enhance security.",
+      image: "/images/projects/CHAIN.png",
+    },
+    {
+      title: "MindACADEMY",
+      description:
+        "MindAcademy provides tailored training programs and workshops to upskill businesses and individuals.",
+      image: "/images/projects/ACADEMY.png",
     },
   ];
 
@@ -128,105 +87,47 @@ const ProductsPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <Card
-                key={index}
-                className="bg-gray-900 border-gray-700 hover:border-primary transition-all duration-300 group overflow-hidden"
-              >
-                <div className="relative">
-                  <img
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge
-                      className={`${getStatusColor(product.status)} text-white`}
-                    >
-                      {product.status}
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
-                    <div className="text-primary mr-3">{product.icon}</div>
-                    <div>
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-primary text-primary"
-                      >
-                        {product.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                    {product.description}
-                  </p>
-                  <ul className="space-y-2 mb-6">
-                    {product.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="text-sm text-gray-400 flex items-center"
-                      >
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  {/* <div className="flex space-x-2">
-                    {product.status === "Available" ? (
-                      <>
-                        <Button
-                          size="sm"
-                          className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                        >
-                          Try Now
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
-                        >
-                          Demo
-                        </Button>
-                      </>
-                    ) : product.status === "Beta" ? (
-                      <>
-                        <Button
-                          size="sm"
-                          className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                        >
-                          Join Beta
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
-                        >
-                          Learn More
-                        </Button>
-                      </>
-                    ) : (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
-                      >
-                        Get Notified
-                      </Button>
-                    )}
-                  </div> */}
-                </CardContent>
-              </Card>
-            ))}
+      <section id="products" className="py-20">
+        {products.map((product, index) => (
+          <div
+            key={product.title}
+            className={`flex flex-col md:flex-row md:gap-20 items-center justify-between max-w-7xl mx-auto px-6 py-20 ${
+              index % 2 === 0 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            <div className="md:w-1/2 mb-10 md:mb-0 relative group overflow-hidden rounded-2xl">
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"> */}
+              {/* <ul className="text-center">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="mb-4 text-xl font-semibold">
+                      {feature}
+                    </li>
+                  ))}
+                </ul> */}
+              {/* </div> */}
+            </div>
+            <div className="md:w-1/2 md:pr-10">
+              <h2 className="text-4xl font-bold mb-4">{product.title}</h2>
+              {/* <p className="text-xl text-gray-300 mb-6">{product.tagline}</p> */}
+              <p className="mb-6">{product.description}</p>
+              {/* <Button
+                text={"Contact us"}
+                textColor={"white"}
+                hoverTextColor={"primary"}
+                bgColor={"primary"}
+                hoverBgColor={"white"}
+                href={"/contact-us"}
+              /> */}
+            </div>
           </div>
-        </div>
+        ))}
       </section>
 
       {/* Product Categories */}
