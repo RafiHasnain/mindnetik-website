@@ -16,16 +16,11 @@ import { ServiceSection } from "@/components/service-section";
 import { InternationalFootprint } from "@/components/international-footprint";
 import { TestimonialSection } from "@/components/testimonial-section";
 import { CTASection } from "@/components/cta";
-import { IndustryExperties } from "@/components/industry-experties";
+import { IndustryExpertise } from "@/components/industry-experties";
 import ProductSection from "@/components/product-section";
+import Faq from "@/components/faq";
 
 const HomePage = () => {
-  
-
- 
-
-  
-
   return (
     <main className="min-h-screen font-manrope">
       {/* <HeroSection /> */}
@@ -40,20 +35,21 @@ const HomePage = () => {
 
       <AboutSection />
 
-      <ServiceSection/>
+      <ServiceSection />
 
-      <ProductSection/>
+      <ProductSection />
 
-     <InternationalFootprint/>
+      <InternationalFootprint />
 
-     <IndustryExperties/>
+      <IndustryExpertise />
 
       <TechStackSection />
 
-     <TestimonialSection/>
+      <TestimonialSection />
 
-      <CTASection/>
+      <Faq />
 
+      <CTASection />
     </main>
   );
 };

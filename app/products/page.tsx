@@ -1,4 +1,12 @@
-import { Zap, Brain, Shield, BarChart, Cloud, Users } from "lucide-react";
+import {
+  Zap,
+  Brain,
+  Shield,
+  BarChart,
+  Cloud,
+  Users,
+  Circle,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,48 +19,101 @@ const ProductsPage = () => {
       description:
         "MindERP is a fully modular enterprise management suite that simplifies and automates key business processes.",
       image: "/images/projects/ERP.png",
+      features: [
+        "CRM, POS, Sales, and Procurement Management",
+        "Finance,Accounting, and Automated Invoicing",
+        "Inventory, Supply Chain, and BOM Manufacturing",
+        "Human Resource, Payroll, and Appraisals",
+        "Project and Task Management",
+        "Real-Time Analytics and Reporting Tools",
+      ],
     },
     {
       title: "MindEDU",
       description:
         "MindEdu offers an end-to-end solution for educational institutions, enhancing efficiency and transparency.",
       image: "/images/projects/EDU.png",
+      features: [
+        "Admissions, Curricculum, Planning, and LMS Integration",
+        "Blockchain-Secured Certification and Digital Records",
+        "Hotel trasport, Attendance and Alumni Management",
+        "Finance, HR and Recourse Allocation",
+        "Multi-Uer Portals, Student, Teacher and Parent Access",
+      ],
     },
     {
       title: "MindHEALTH",
       description:
         "MindHealth streamlines healthcare administration for better patient outcomes and operational efficiency.",
       image: "/images/projects/HEALTH.png",
+      features: [
+        "OPD/IPD Management, EMR and Billing Systems",
+        "Pharmacy Lab, Radiology, and Diagnostics Centers",
+        "Appointment Scheduling and Telemedicine, and Video Consultations",
+        "Insurance, Processing, Blood Bank, and Patient CEM",
+        "HR, Finance, and Digital Patient Portals",
+      ],
     },
     {
       title: "MindPAY OneCard",
       description:
         "indPay OneCard is a smart, app-based platform for seamless payments and controlled access.",
       image: "/images/projects/PAY.png",
+      features: [
+        "QR, Wallet, and Card-based Payments",
+        "Access Control, Time Tracking and Attendance",
+        "Integrated Billing for Tuition, Cafeteria, Gym, Parking, and more",
+        "Mobile Recharge and Subscription-Based Services",
+        "Seamless ERP Integration for Campus and Corporate Environments",
+      ],
     },
     {
       title: "MindGATE",
       description:
         "MindGate revolutionizes digital events through interactive, immersive experiences.",
       image: "/images/projects/GATE.png",
+      features: [
+        "3D Interactive Avatars and Customizable Venues",
+        "Real-Time Polls, Digital Swag Bags, Sponsored Booths",
+        "Live Streaming, VR Integration, Real-Time Analytics",
+        "Multi-Language and Cross-Platform Capability",
+      ],
     },
     {
       title: "MindCLOUD",
       description:
         "MindCloud offers high-performance cloud hosting and continuous DevOps support for mission-critical applications.",
       image: "/images/projects/CLOUD.png",
+      features: [
+        "Scalable Web& Mobile App Hosting Solutions",
+        "Cloud Migration and Hybrid Deployment Strategies",
+        "Continuous Monitoring, Disaster Recovery, and Auto Backups",
+        "Full ISO 27001 Security Compliance and Data Protection",
+      ],
     },
     {
       title: "MindCHAIN",
       description:
         "MindChain brings blockchain technology to streamline operations and enhance security.",
       image: "/images/projects/CHAIN.png",
+      features: [
+        "Degree and Document Verification with Blockchain Security",
+        "Digital Identity Management and Access Control",
+        "Immutable Compliance and Transparent Audit Trails",
+        "Smart Contacts and Blockchain-Enabled Supply Chains (Future Integration)",
+      ],
     },
     {
       title: "MindACADEMY",
       description:
         "MindAcademy provides tailored training programs and workshops to upskill businesses and individuals.",
       image: "/images/projects/ACADEMY.png",
+      features: [
+        "Monthly Webinars and AI, ERP, Cloud, and Emerging Tech",
+        "Corporate Training on Custom Software and Digital Solutions",
+        "Global Certification Programs and Technology Leaders",
+        "Custom Learning Tracks for Client Teams and Partners",
+      ],
     },
   ];
 
@@ -103,20 +164,23 @@ const ProductsPage = () => {
                 height={600}
                 className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-110"
               />
-              {/* <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"> */}
-              {/* <ul className="text-center">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="mb-4 text-xl font-semibold">
-                      {feature}
-                    </li>
-                  ))}
-                </ul> */}
-              {/* </div> */}
             </div>
             <div className="md:w-1/2 md:pr-10">
               <h2 className="text-4xl font-bold mb-4">{product.title}</h2>
               {/* <p className="text-xl text-gray-300 mb-6">{product.tagline}</p> */}
-              <p className="mb-6">{product.description}</p>
+              <p className="mb-6 text-lg">{product.description}</p>
+              <div className="">
+                <ol className="text-left  ml-6 text-gray-400">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="mb-2">
+                      <div className="flex gap-2 items-start">
+                        <Circle className="text-secondary min-w-[20px] min-h-[20px] w-5 h-5" />
+                        {feature}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
               {/* <Button
                 text={"Contact us"}
                 textColor={"white"}
