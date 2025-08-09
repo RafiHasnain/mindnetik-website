@@ -71,24 +71,24 @@ const Navigation = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-full mx-10 px-4 py-5 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 ">
+        <div className="max-w-full mx-2 sm:mx-10 px-4 py-3 sm:py-5 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group ">
               <Image
                 src="/images/logo-white.svg"
                 alt="Mindnetik Logo"
-                width={120}
-                height={100}
-                className="transition-transform duration-300 group-hover:scale-105"
+                width={100}
+                height={80}
+                className="transition-transform duration-300 group-hover:scale-105 w-24 sm:w-32"
               />
             </Link>
 
-            {/* Custom Hamburger Menu - Smooth Cross Animation */}
+            {/* Hamburger Menu */}
             <button
               onClick={toggleMenu}
               disabled={isAnimating}
-              className="relative w-12 h-12 flex items-center justify-end group focus:outline-none"
+              className="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-end group focus:outline-none"
               aria-label="Toggle menu"
             >
               <div className="relative w-8 h-5 flex items-center justify-end">
@@ -128,10 +128,10 @@ const Navigation = () => {
         />
 
         {/* Menu Content */}
-        <div className="relative w-full h-full flex flex-col sm:flex-row md:flex-row lg:flex-row sm:mt-16 md:mt-0 lg:mt-4">
+        <div className="relative w-full h-full flex flex-col sm:flex-row md:flex-row lg:flex-row sm:mt-16 md:mt-0 lg:mt-16 pt-20 sm:pt-0 overflow-y-auto">
           {/* Left Side - Navigation */}
-          <div className="flex-1 flex items-center justify-center  ">
-            <div className="space-y-8">
+          <div className="flex-1 flex items-center  justify-center">
+            <div className="space-y-6 min-w-52 sm:space-y-8">
               {navItems.map((item, index) => (
                 <div
                   key={item.href}
@@ -145,7 +145,7 @@ const Navigation = () => {
                   <Link
                     href={item.href}
                     onClick={closeMenu}
-                    className={`group flex items-center text-4xl sm:text-5xl lg:text-6xl font-bold font-manrope transition-all duration-300 ${
+                    className={`group flex items-center text-2xl sm:text-4xl lg:text-6xl font-bold font-manrope transition-all duration-300 ${
                       pathname === item.href
                         ? "text-primary"
                         : "text-white hover:text-primary"
@@ -155,7 +155,7 @@ const Navigation = () => {
                       {item.label}
                     </span>
                     <ChevronRight
-                      className={`ml-4 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ${
+                      className={`ml-2 sm:ml-4 w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all duration-300 ${
                         pathname === item.href ? "text-primary" : "text-white"
                       }`}
                     />
@@ -165,18 +165,18 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Vertical Divider */}
+          {/* Vertical Divider - hide on mobile */}
           <div
-            className={`w-px bg-gray-700/50 transform transition-all duration-700 ${
+            className={`hidden sm:block w-px bg-gray-700/50 transform transition-all duration-700 ${
               isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
             }`}
             style={{ transitionDelay: "400ms" }}
           />
 
           {/* Right Side - Contact Information */}
-          <div className="flex-1 flex items-center justify-center  ">
+          <div className="flex-1 flex items-center justify-center">
             <div
-              className={`space-y-8 transform transition-all duration-700 ease-out ${
+              className={`space-y-6 sm:space-y-8 transform transition-all duration-700 ease-out ${
                 isOpen
                   ? "translate-x-0 opacity-100"
                   : "translate-x-12 opacity-0"
@@ -184,28 +184,29 @@ const Navigation = () => {
               style={{ transitionDelay: "600ms" }}
             >
               <div>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-manrope">
+                <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 font-manrope">
                   Contact
                 </h3>
-
-                <div className="space-y-4 text-gray-300">
+                <div className="space-y-2 sm:space-y-4 text-gray-300">
                   <div>
-                    <p className="text-lg font-medium">
+                    <p className="text-base sm:text-lg font-medium">
                       Dubai +(971) 4 XXX XXXX
                     </p>
                   </div>
                   <div>
-                    <p className="text-lg font-medium">hello@mindnetik.com</p>
+                    <p className="text-base sm:text-lg font-medium">
+                      hello@mindnetik.com
+                    </p>
                   </div>
                   <div>
-                    <p className="text-lg">Business Bay, Dubai</p>
-                    <p className="text-lg">United Arab Emirates</p>
+                    <p className="text-base sm:text-lg">Business Bay, Dubai</p>
+                    <p className="text-base sm:text-lg">United Arab Emirates</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 {socialLinks.map((social, index) => (
                   <div
                     key={social.name}
@@ -218,7 +219,7 @@ const Navigation = () => {
                   >
                     <a
                       href={social.href}
-                      className="block text-sm font-medium text-gray-400 hover:text-primary transition-colors duration-300 tracking-wider font-manrope"
+                      className="block text-xs sm:text-sm font-medium text-gray-400 hover:text-primary transition-colors duration-300 tracking-wider font-manrope"
                     >
                       {social.name}
                     </a>
@@ -228,7 +229,7 @@ const Navigation = () => {
 
               {/* CTA Button */}
               <div
-                className={`pt-8 transform transition-all duration-700 ${
+                className={`pt-6 sm:pt-8 transform transition-all duration-700 ${
                   isOpen
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
@@ -237,7 +238,7 @@ const Navigation = () => {
               >
                 <Button
                   onClick={closeMenu}
-                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25 font-manrope"
+                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25 font-manrope text-base sm:text-lg"
                 >
                   Get Started
                 </Button>

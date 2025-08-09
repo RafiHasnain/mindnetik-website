@@ -19,6 +19,16 @@ import { CTASection } from "@/components/cta";
 import { IndustryExpertise } from "@/components/industry-experties";
 import ProductSection from "@/components/product-section";
 import Faq from "@/components/faq";
+import Marquee from "@/components/marquee";
+
+const logos = [
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-liva.png",
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-ztos.png",
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-muzica.png",
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-kyan.png",
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-utosia.png",
+  "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-aven.png",
+];
 
 const HomePage = () => {
   return (
@@ -33,6 +43,8 @@ const HomePage = () => {
         isMain
       />
 
+      <Marquee title="Our Partners" logos={logos} />
+
       <AboutSection />
 
       <ServiceSection />
@@ -46,6 +58,8 @@ const HomePage = () => {
       <TechStackSection />
 
       <TestimonialSection />
+
+      <Marquee title="Our Achievements" logos={logos} />
 
       <Faq />
 

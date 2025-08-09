@@ -157,12 +157,13 @@ const ProductsPage = () => {
             }`}
           >
             <div className="md:w-1/2 mb-10 md:mb-0 relative group overflow-hidden rounded-2xl">
+              <div className="absolute bottom-5 left-10 w-96 h-96 bg-gradient-radial from-secondary/20 to-dark rounded-full blur-lg z-0"></div>
               <Image
                 src={product.image}
                 alt={product.title}
                 width={600}
                 height={600}
-                className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-110"
+                className="rounded-2xl shadow-2xl transition-transform duration-500 z-10 relative"
               />
             </div>
             <div className="md:w-1/2 md:pr-10">
@@ -170,9 +171,9 @@ const ProductsPage = () => {
               {/* <p className="text-xl text-gray-300 mb-6">{product.tagline}</p> */}
               <p className="mb-6 text-lg">{product.description}</p>
               <div className="">
-                <ol className="text-left  ml-6 text-gray-400">
+                <ol className="text-left  ml-0 text-gray-400">
                   {product.features.map((feature, i) => (
-                    <li key={i} className="mb-2">
+                    <li key={i} className="mb-3">
                       <div className="flex gap-2 items-start">
                         <Circle className="text-secondary min-w-[20px] min-h-[20px] w-5 h-5" />
                         {feature}

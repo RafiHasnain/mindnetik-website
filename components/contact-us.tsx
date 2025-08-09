@@ -8,8 +8,8 @@ import SplineRobot from "./spline-robot";
 
 const ContactUs = () => {
   return (
-    <div className="flex gap-5">
-      <Card className="bg-gray-900/80 backdrop-blur-sm border-gray-700/50 shadow-2xl min-w-[600px]">
+    <div className="flex-col sm:flex md:flex lg:flex-row gap-5">
+      <Card className="bg-gray-900/80 backdrop-blur-sm border-gray-700/50 shadow-2xl min-w-[200px] sm:min-w-[600px] md:min-w-[600px] lg:min-w-[600px]">
         <CardContent className="p-8 md:p-12">
           <form className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -167,7 +167,7 @@ const AboutPage = () => {
         {missionVision.map((item, index) => (
           <div
             key={item.title}
-            className={`flex flex-col md:flex-row md:gap-20 items-center justify-between max-w-7xl mx-auto px-6 py-20 ${
+            className={`flex flex-col md:flex-row md:gap-28 items-center justify-between max-w-7xl mx-auto px-6 py-20 ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
