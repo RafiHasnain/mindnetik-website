@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { Handshake, Sparkles, Trophy } from "lucide-react";
 
 const Marquee = ({ title, logos }: { title: string; logos: string[] }) => {
   const [key, setKey] = useState(0);
@@ -29,7 +30,20 @@ const Marquee = ({ title, logos }: { title: string; logos: string[] }) => {
           }
         `}
       </style>
-      <p className="text-lg text-gray-500 text-center pb-10">{title}</p>
+      {/* <p className="text-lg text-gray-500 text-center pb-10">{title}</p> */}
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center space-x-2 bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 mb-8">
+          {title.split(" ").pop() === "Partners" ? (
+            <Handshake className="w-4 h-4 text-primary" />
+          ) : (
+            <Trophy className="w-4 h-4 text-primary" />
+          )}
+          <span className="text-sm font-medium text-primary font-manrope">
+            {title}
+          </span>
+        </div>
+      </div>
+
       <div className="relative overflow-hidden">
         <div
           className="flex min-w-max animate-marquee"

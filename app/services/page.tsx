@@ -10,6 +10,14 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ServiceCategory } from "@/components/ServiceCategory";
+import { ServicesGrid } from "@/components/ServiceGrid";
+import { ServiceItem } from "@/components/ServiceItem";
+import {
+  collaborationModels,
+  topServices,
+  enterpriseSolutions,
+} from "@/data/services";
 
 const ServicesPage = () => {
   const services = [
@@ -136,51 +144,63 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-gray-900 border-gray-700 hover:border-primary transition-all duration-300 group"
-              >
-                <CardContent className="p-6">
-                  <div
-                    className={`w-16 h-16 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <div className="text-white">{service.icon}</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="text-sm text-gray-400 flex items-center"
-                      >
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  {/* <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
-                  >
-                    Learn More
-                  </Button> */}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* Collaboration Models */}
+      <ServiceCategory title="Collaboration Models">
+        <ServicesGrid>
+          {collaborationModels.map((model, index) => (
+            <ServiceItem
+              key={index}
+              title={model.title}
+              description={model.description}
+              animationUrl={model.animationUrl}
+            />
+          ))}
+        </ServicesGrid>
+      </ServiceCategory>
+
+      {/* Top Services */}
+      <ServiceCategory title="Top Services">
+        <ServicesGrid>
+          {topServices.map((service, index) => (
+            <ServiceItem
+              key={index}
+              title={service.title}
+              description={service.description}
+              animationUrl={service.animationUrl}
+            />
+          ))}
+        </ServicesGrid>
+      </ServiceCategory>
+
+      {/* Enterprise Focused Solutions */}
+      <ServiceCategory title="Enterprise Focused Solutions">
+        <ServicesGrid>
+          {enterpriseSolutions.map((solution, index) => (
+            <ServiceItem
+              key={index}
+              title={solution.title}
+              description={solution.description}
+              animationUrl={solution.animationUrl}
+            />
+          ))}
+        </ServicesGrid>
+      </ServiceCategory>
+
+      {/* Call to Action */}
+      {/* <section className="py-16 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6 font-manrope">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto font-manrope">
+            Get in touch with our expert team to discuss how our solutions can
+            help drive your business forward.
+          </p>
+          <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-50 transition-colors font-manrope">
+            Contact Us
+          </button>
         </div>
-      </section>
+      </section> */}
 
       {/* Process Section */}
       <section className="py-20 bg-gray-900">
@@ -218,7 +238,7 @@ const ServicesPage = () => {
               },
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-lg">
                     {process.step}
                   </span>
@@ -232,9 +252,9 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <section className="py-20 bg-gradient-to-b from-primary/80 to-primary/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
@@ -242,7 +262,7 @@ const ServicesPage = () => {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+            className="group bg-primary hover:bg-secondary text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-manrope"
           >
             Schedule a Consultation
           </Button>

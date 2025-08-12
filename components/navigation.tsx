@@ -174,7 +174,7 @@ const Navigation = () => {
           />
 
           {/* Right Side - Contact Information */}
-          <div className="flex-1 flex items-center justify-center">
+          <div className="hidden sm:flex-1 sm:flex items-center justify-center">
             <div
               className={`space-y-6 sm:space-y-8 transform transition-all duration-700 ease-out ${
                 isOpen
