@@ -60,7 +60,8 @@ export const topServices: ServiceData[] = [
     title: "Business Intelligence",
     description:
       "Gain actionable insights from your data to drive better business decisions and strategies.",
-    animationUrl: "https://cdn.lordicon.com/nocovwne.json",
+    animationUrl:
+      "https://lottie.host/e381882d-ac2a-431d-8b41-b5e23c926d38/XpfWqasDMK.lottie",
   },
   {
     title: "AR/VR Solutions",
@@ -73,7 +74,8 @@ export const topServices: ServiceData[] = [
     title: "Game Studio",
     description:
       "Develop engaging mobile, console, and VR games with end-to-end design and development.",
-    animationUrl: "https://cdn.lordicon.com/qhgmphtg.json",
+    animationUrl:
+      "https://lottie.host/3ffb9493-5a7a-47b6-b97a-46e70a089427/oTwcYivEfF.lottie",
   },
   {
     title: "QA Testing and Automation",
