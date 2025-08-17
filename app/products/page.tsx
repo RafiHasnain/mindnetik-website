@@ -262,9 +262,9 @@ const ProductsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gradient-to-b from-primary/50 to-secondary/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white bg-clip-text ">
             Need a Custom Solution?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
@@ -273,7 +273,7 @@ const ProductsPage = () => {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+            className=" group bg-primary hover:bg-secondary text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 font-manrope"
           >
             Discuss Custom Development
           </Button>

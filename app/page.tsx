@@ -20,6 +20,7 @@ import { IndustryExpertise } from "@/components/industry-experties";
 import ProductSection from "@/components/product-section";
 import Faq from "@/components/faq";
 import Marquee from "@/components/marquee";
+import Achievements from "@/components/achievements";
 
 const logos = [
   "https://cdn.rareblocks.xyz/collection/bakerstreet/images/logo-cloud/2/logo-liva.png",
@@ -59,7 +60,8 @@ const HomePage = () => {
 
       <TestimonialSection />
 
-      <Marquee title="Our Achievements" logos={logos} />
+      {/* <Marquee title="Our Achievements" logos={logos} /> */}
+      <Achievements />
 
       <Faq />
 

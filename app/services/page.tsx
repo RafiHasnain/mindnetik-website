@@ -214,7 +214,7 @@ const ServicesPage = () => {
               long-term success
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 step: "01",
@@ -247,12 +247,72 @@ const ServicesPage = () => {
                 <p className="text-gray-300">{process.description}</p>
               </div>
             ))}
-          </div>
+          </div> */}
+          <section className="">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <div className="relative mt-12 lg:mt-20">
+                <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+                  <img
+                    className="w-full"
+                    src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
+                    alt=""
+                  />
+                </div>
+
+                <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
+                  <div>
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                      <span className="text-xl font-semibold text-gray-700">
+                        {" "}
+                        1{" "}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                      Discovery
+                    </h3>
+                    <p className="mt-4 text-base text-gray-300">
+                      UnderStanding your needs and challenges
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                      <span className="text-xl font-semibold text-gray-700">
+                        {" "}
+                        2{" "}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                      Strategy
+                    </h3>
+                    <p className="mt-4 text-base text-gray-300">
+                      Developing a comprehensive solution plan
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                      <span className="text-xl font-semibold text-gray-700">
+                        {" "}
+                        3{" "}
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                      Release & Launch
+                    </h3>
+                    <p className="mt-4 text-base text-gray-300">
+                      Build and Launch your solution with confidence
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-primary/80 to-primary/20">
+      <section className="py-20 bg-gradient-to-b from-primary/50 to-secondary/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Ready to Get Started?

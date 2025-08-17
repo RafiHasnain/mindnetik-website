@@ -180,17 +180,8 @@ const ContactPage = () => {
         </div>
       </section>
       <section className="">
-        {/* <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.6707120515375!2d90.4126813155454!3d23.794737484567467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7707177a5db%3A0x95fd408f44f9bc61!2sAhsan%20Technologies%20Ltd.!5e0!3m2!1sen!2sbd!4v1674385397114!5m2!1sen!2sbd"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe> */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.123456789012!2d55.2708!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6c7b8a9b8b9b%3A0x1234567890abcdef!2sDubai%20Office%20Location!5e0!3m2!1sen!2suae!4v1234567890123"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.3469898736403!2d90.40125347533653!3d23.77065507865657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7479bee6099%3A0xc561649d7b386cb7!2sImpetus%20Center!5e0!3m2!1sen!2sbd!4v1755436415564!5m2!1sen!2sbd"
           width="100%"
           height="450"
           style={{ border: 0 }}

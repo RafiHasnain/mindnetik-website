@@ -9,8 +9,8 @@ const ProductSection = () => {
       description:
         "MindERP is a fully modular enterprise management suite that simplifies and automates key business processes.",
       image: "/images/projects/ERP.png",
-      backgroundColor: "bg-gray-300",
-      textColor: "text-gray-900",
+      backgroundColor: "bg-secondary/50",
+      textColor: "text-gray-300",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const ProductSection = () => {
       description:
         "MindEdu offers an end-to-end solution for educational institutions, enhancing efficiency and transparency.",
       image: "/images/projects/EDU.png",
-      backgroundColor: "bg-gray-800",
+      backgroundColor: "bg-primary/50",
       textColor: "text-gray-300",
     },
     {
@@ -27,7 +27,7 @@ const ProductSection = () => {
       description:
         "MindHealth streamlines healthcare administration for better patient outcomes and operational efficiency.",
       image: "/images/projects/HEALTH.png",
-      backgroundColor: "bg-primary/50",
+      backgroundColor: "bg-gray-800",
       textColor: "text-gray-300",
     },
     {
@@ -36,8 +36,8 @@ const ProductSection = () => {
       description:
         "MindPay OneCard is a smart, app-based platform for seamless payments and controlled access.",
       image: "/images/projects/PAY.png",
-      backgroundColor: "bg-secondary/50",
-      textColor: "text-gray-300",
+      backgroundColor: "bg-gray-300",
+      textColor: "text-gray-900",
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ const ProductSection = () => {
       description:
         "MindGate revolutionizes digital events through interactive, immersive experiences.",
       image: "/images/projects/GATE.png",
-      backgroundColor: "bg-gray-800",
+      backgroundColor: "bg-secondary/50",
       textColor: "text-gray-300",
     },
     {
@@ -54,8 +54,8 @@ const ProductSection = () => {
       description:
         "MindCloud offers high-performance cloud hosting and continuous DevOps support for mission-critical applications.",
       image: "/images/projects/CLOUD.png",
-      backgroundColor: "bg-gray-300",
-      textColor: "text-gray-900",
+      backgroundColor: "bg-primary/50",
+      textColor: "text-gray-300",
     },
     {
       id: 7,
@@ -63,7 +63,7 @@ const ProductSection = () => {
       description:
         "MindChain brings blockchain technology to streamline operations and enhance security.",
       image: "/images/projects/CHAIN.png",
-      backgroundColor: "bg-primary/50",
+      backgroundColor: "bg-gray-800",
       textColor: "text-gray-300",
     },
     {
@@ -72,7 +72,7 @@ const ProductSection = () => {
       description:
         "MindAcademy provides tailored training programs and workshops to upskill businesses and individuals.",
       image: "/images/projects/ACADEMY.png",
-      backgroundColor: "bg-secondary/50",
+      backgroundColor: "bg-gray-300",
       textColor: "text-gray-300",
     },
   ];
