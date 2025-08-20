@@ -20,120 +20,13 @@ import {
 } from "@/data/services";
 
 const ServicesPage = () => {
-  // const services = [
-  //   {
-  //     icon: <Code className="w-12 h-12" />,
-  //     title: "Custom Software Development",
-  //     description:
-  //       "Tailored software solutions built with modern technologies and best practices.",
-  //     features: [
-  //       "Full-stack development",
-  //       "API integration",
-  //       "Database design",
-  //       "Quality assurance",
-  //     ],
-  //     color: "from-blue-500 to-purple-600",
-  //   },
-  //   {
-  //     icon: <Zap className="w-12 h-12" />,
-  //     title: "Process Automation",
-  //     description:
-  //       "Streamline your operations with intelligent automation and workflow optimization.",
-  //     features: [
-  //       "Workflow automation",
-  //       "RPA implementation",
-  //       "Integration services",
-  //       "Performance monitoring",
-  //     ],
-  //     color: "from-purple-500 to-pink-600",
-  //   },
-  //   {
-  //     icon: <Brain className="w-12 h-12" />,
-  //     title: "AI & Machine Learning",
-  //     description:
-  //       "Harness the power of artificial intelligence to drive innovation and efficiency.",
-  //     features: [
-  //       "Predictive analytics",
-  //       "Natural language processing",
-  //       "Computer vision",
-  //       "ML model deployment",
-  //     ],
-  //     color: "from-green-500 to-blue-600",
-  //   },
-  //   {
-  //     icon: <Cloud className="w-12 h-12" />,
-  //     title: "Cloud Solutions",
-  //     description:
-  //       "Scalable cloud infrastructure and migration services for modern businesses.",
-  //     features: [
-  //       "Cloud migration",
-  //       "Infrastructure as code",
-  //       "DevOps implementation",
-  //       "Cost optimization",
-  //     ],
-  //     color: "from-yellow-500 to-red-600",
-  //   },
-  //   {
-  //     icon: <Users className="w-12 h-12" />,
-  //     title: "Digital Transformation Consulting",
-  //     description:
-  //       "Strategic guidance to navigate your digital transformation journey successfully.",
-  //     features: [
-  //       "Strategy development",
-  //       "Technology assessment",
-  //       "Change management",
-  //       "Training programs",
-  //     ],
-  //     color: "from-indigo-500 to-purple-600",
-  //   },
-  //   {
-  //     icon: <Shield className="w-12 h-12" />,
-  //     title: "Cybersecurity Solutions",
-  //     description:
-  //       "Comprehensive security solutions to protect your digital assets and data.",
-  //     features: [
-  //       "Security audits",
-  //       "Threat detection",
-  //       "Compliance management",
-  //       "Incident response",
-  //     ],
-  //     color: "from-red-500 to-orange-600",
-  //   },
-  //   {
-  //     icon: <Smartphone className="w-12 h-12" />,
-  //     title: "Mobile App Development",
-  //     description:
-  //       "Native and cross-platform mobile applications for iOS and Android.",
-  //     features: [
-  //       "iOS development",
-  //       "Android development",
-  //       "Cross-platform solutions",
-  //       "App store optimization",
-  //     ],
-  //     color: "from-teal-500 to-green-600",
-  //   },
-  //   {
-  //     icon: <BarChart className="w-12 h-12" />,
-  //     title: "Data Analytics & BI",
-  //     description:
-  //       "Transform your data into actionable insights with advanced analytics solutions.",
-  //     features: [
-  //       "Data visualization",
-  //       "Business intelligence",
-  //       "Real-time analytics",
-  //       "Predictive modeling",
-  //     ],
-  //     color: "from-orange-500 to-yellow-600",
-  //   },
-  // ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-40 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-gradient">
               Our Services
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">

@@ -15,13 +15,16 @@ const ContactPage = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Dubai Office",
-      details: ["Business Bay, Dubai", "United Arab Emirates"],
+      title: "Bangladesh Office",
+      details: [
+        "Impetus Center, 242/B Bir Uttam Mir Shawkat Sarak, Dhaka 1208",
+        "Bangladesh",
+      ],
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+971 4 XXX XXXX", "+1 XXX XXX XXXX"],
+      details: ["+880 1618-871291"],
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -160,7 +163,7 @@ const ContactPage = () => {
               </div>
 
               {/* Social Media */}
-              <div>
+              {/* <div>
                 <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
@@ -174,7 +177,7 @@ const ContactPage = () => {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

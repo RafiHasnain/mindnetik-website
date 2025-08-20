@@ -16,37 +16,49 @@ export const IndustryExpertise = () => {
 
   const industryExpertise = [
     {
-      icon: <GraduationCap className="w-8 h-8 text-primary" />,
+      icon: (
+        <GraduationCap className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "Education & EdTech",
       description:
         "Transforming learning through smart, scalable digital education platforms.",
     },
     {
-      icon: <Stethoscope className="w-8 h-8 text-primary" />,
+      icon: (
+        <Stethoscope className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "Healthcare & Pharmaceuticals",
       description:
         "Empowering patient care and operations with secure health-tech solutions.",
     },
     {
-      icon: <Factory className="w-8 h-8 text-primary" />,
+      icon: (
+        <Factory className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "Trading & Manufacturing",
       description:
         "Optimizing supply chains and operations through automation and analytics.",
     },
     {
-      icon: <Landmark className="w-8 h-8 text-primary" />,
+      icon: (
+        <Landmark className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "NGOs & Government Organizations",
       description:
         "Delivering impact-driven digital tools for public service and social good.",
     },
     {
-      icon: <CreditCard className="w-8 h-8 text-primary" />,
+      icon: (
+        <CreditCard className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "BFSI & FinTech",
       description:
         "Driving financial innovation with secure, user-centric digital solutions.",
     },
     {
-      icon: <Building className="w-8 h-8 text-primary" />,
+      icon: (
+        <Building className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+      ),
       name: "Real Estate, Retail & RMG",
       description:
         "Boosting growth and visibility with custom tech for sales, logistics, and engagement.",

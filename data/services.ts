@@ -39,6 +39,13 @@ export const collaborationModels: ServiceData[] = [
       "Develop a simple version of your product to test and validate with real users, accelerating market entry.",
     animationUrl: "https://assets3.lottiefiles.com/packages/lf20_h4th9ofg.json",
   },
+  {
+    title: "Training and Capability Building",
+    description:
+      "Empower your team with the skills needed to leverage new technologies and methodologies effectively.",
+    animationUrl:
+      "https://lottie.host/9f129c13-5502-465a-88a1-9dd4e1c0b616/BMpioShNqC.lottie",
+  },
 ];
 
 export const topServices: ServiceData[] = [
@@ -114,6 +121,13 @@ export const topServices: ServiceData[] = [
     description:
       "Enhance team collaboration and document management with custom SharePoint solutions.",
     animationUrl: "https://assets5.lottiefiles.com/packages/lf20_pmgmuthj.json",
+  },
+  {
+    title: "Big Data Analytics",
+    description:
+      "Harness the power of big data to uncover insights and trends that drive strategic decisions.",
+    animationUrl:
+      "https://lottie.host/693d03c9-dd13-42d4-9b0c-c56eba8d998b/XEGxn9Utav.lottie",
   },
 ];
 

@@ -51,7 +51,10 @@ const Footer = () => {
             </p>
             <div className="flex items-center text-gray-300 mb-2">
               <MapPin className="w-4 h-4 mr-2 text-primary" />
-              <span className="text-sm">Business Bay, Dubai, UAE</span>
+              <span className="text-sm">
+                Impetus Center, 242/B Bir Uttam Mir Shawkat Sarak, Dhaka 1208,
+                Bangladesh
+              </span>
             </div>
             <div className="flex items-center text-gray-300">
               <Mail className="w-4 h-4 mr-2 text-primary" />
@@ -94,7 +97,7 @@ const Footer = () => {
           </div>
 
           {/* Support Links */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
@@ -108,7 +111,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section */}
@@ -116,7 +119,7 @@ const Footer = () => {
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Mindnetik. All rights reserved.
           </p>
-          <div className="flex space-x-4">
+          {/* <div className="flex space-x-4">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -127,7 +130,7 @@ const Footer = () => {
                 {social.icon}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
