@@ -230,7 +230,7 @@ const Navigation = () => {
               </div> */}
 
               {/* CTA Button */}
-              <div
+              {/* <div
                 className={`pt-6 sm:pt-8 transform transition-all duration-700 ${
                   isOpen
                     ? "translate-y-0 opacity-100"
@@ -244,7 +244,7 @@ const Navigation = () => {
                 >
                   Get Started
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
