@@ -190,7 +190,7 @@ const Navigation = () => {
                 <div className="space-y-2 sm:space-y-4 text-gray-300">
                   <div>
                     <p className="text-base sm:text-lg font-medium">
-                      Dubai +(971) 4 XXX XXXX
+                      Bangladesh +880 1618-871291
                     </p>
                   </div>
                   <div>
@@ -199,14 +199,16 @@ const Navigation = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="text-base sm:text-lg">Business Bay, Dubai</p>
-                    <p className="text-base sm:text-lg">United Arab Emirates</p>
+                    <p className="text-base sm:text-lg">
+                      Impetus Center, Dhaka 1208
+                    </p>
+                    <p className="text-base sm:text-lg">Bangladesh</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="space-y-2 sm:space-y-3">
+              {/* <div className="space-y-2 sm:space-y-3">
                 {socialLinks.map((social, index) => (
                   <div
                     key={social.name}
@@ -225,7 +227,7 @@ const Navigation = () => {
                     </a>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               {/* CTA Button */}
               <div
