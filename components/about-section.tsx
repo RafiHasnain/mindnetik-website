@@ -9,9 +9,7 @@ import InteractiveWorldMap from "./interactive-world-map";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedCountries, setSelectedCountries] = useState<string[]>([
-    "Bangladesh",
-  ]);
+
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,15 +29,15 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleCountryClick = (country: string) => {
-    setSelectedCountries((prev) => {
-      if (prev.includes(country)) {
-        return prev.filter((c) => c !== country);
-      } else {
-        return [...prev, country];
-      }
-    });
-  };
+  // const handleCountryClick = (country: string) => {
+  //   setSelectedCountries((prev) => {
+  //     if (prev.includes(country)) {
+  //       return prev.filter((c) => c !== country);
+  //     } else {
+  //       return [...prev, country];
+  //     }
+  //   });
+  // };
 
   return (
     <section

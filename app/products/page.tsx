@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 import {
   Zap,
   Brain,
@@ -13,6 +15,61 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
 const ProductsPage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const productRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleProducts, setVisibleProducts] = useState<boolean[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = productRefs.current.findIndex((ref) => ref === entry.target);
+            if (index !== -1) {
+              setVisibleProducts((prev) => {
+                const newVisible = [...prev];
+                newVisible[index] = true;
+                return newVisible;
+              });
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "-50px 0px",
+      }
+    );
+
+    productRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      productRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const products = [
     {
       title: "MindERP",
@@ -131,7 +188,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div ref={sectionRef} className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-40 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,37 +209,49 @@ const ProductsPage = () => {
         {products.map((product, index) => (
           <div
             key={product.title}
-            className={`flex flex-col md:flex-row md:gap-20 items-center justify-between max-w-7xl mx-auto px-6 py-20 ${
-              index % 2 === 0 ? "md:flex-row-reverse" : ""
+            ref={(el) => {
+              productRefs.current[index] = el;
+              if (visibleProducts.length <= index) {
+                setVisibleProducts((prev) => [...prev, false]);
+              }
+            }}
+            className={`group transition-all duration-700 ${
+              visibleProducts[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
+            style={{ transitionDelay: `${index * 150}ms` }}
           >
-            <div className="md:w-1/2 mb-10 md:mb-0 relative group overflow-hidden rounded-2xl">
-              <div className="absolute bottom-5 left-10 w-96 h-96 bg-gradient-radial from-secondary/20 to-dark rounded-full blur-lg z-0"></div>
-              <Image
-                src={product.image}
-                alt={product.title}
-                width={600}
-                height={600}
-                className="rounded-2xl shadow-2xl transition-transform duration-500 z-10 relative"
-              />
-            </div>
-            <div className="md:w-1/2 md:pr-10">
-              <h2 className="text-4xl font-bold mb-4">{product.title}</h2>
-              {/* <p className="text-xl text-gray-300 mb-6">{product.tagline}</p> */}
-              <p className="mb-6 text-lg">{product.description}</p>
-              <div className="">
-                <ol className="text-left  ml-0 text-gray-400">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="mb-3">
-                      <div className="flex gap-2 items-start">
-                        <Circle className="text-secondary min-w-[20px] min-h-[20px] w-5 h-5" />
-                        {feature}
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+            <div
+              className={`flex flex-col md:flex-row md:gap-20 items-center justify-between max-w-7xl mx-auto px-6 py-20 ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div className="md:w-1/2 mb-10 md:mb-0 relative group overflow-hidden rounded-2xl">
+                <div className="absolute bottom-5 left-10 w-96 h-96 bg-gradient-radial from-secondary/20 to-dark rounded-full blur-lg z-0"></div>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={600}
+                  height={600}
+                  className="rounded-2xl shadow-2xl transition-transform duration-500 z-10 relative"
+                />
               </div>
-              {/* <Button
+              <div className="md:w-1/2 md:pr-10">
+                <h2 className="text-4xl font-bold mb-4">{product.title}</h2>
+                {/* <p className="text-xl text-gray-300 mb-6">{product.tagline}</p> */}
+                <p className="mb-6 text-lg">{product.description}</p>
+                <div className="">
+                  <ol className="text-left  ml-0 text-gray-400">
+                    {product.features.map((feature, i) => (
+                      <li key={i} className="mb-3">
+                        <div className="flex gap-2 items-start">
+                          <Circle className="text-secondary min-w-[20px] min-h-[20px] w-5 h-5" />
+                          {feature}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+                {/* <Button
                 text={"Contact us"}
                 textColor={"white"}
                 hoverTextColor={"primary"}
@@ -190,6 +259,7 @@ const ProductsPage = () => {
                 hoverBgColor={"white"}
                 href={"/contact-us"}
               /> */}
+              </div>
             </div>
           </div>
         ))}

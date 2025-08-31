@@ -17,7 +17,7 @@ const Marquee = ({ title, logos }: { title: string; logos: string[] }) => {
   const animationDuration = `${logos.length * 5}s`;
 
   return (
-    <section className=" bg-gray-800 sm:py-16 lg:py-20">
+    <section className=" bg-gray-800 py-10 sm:py-16 lg:py-20">
       {/* Inject marquee animation CSS */}
       <style>
         {`

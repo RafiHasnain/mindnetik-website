@@ -2,6 +2,26 @@ import React, { useState, useRef, useEffect } from "react";
 import { Check } from "lucide-react";
 
 const ProductSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const products = [
     {
       id: 1,
@@ -73,7 +93,7 @@ const ProductSection = () => {
         "MindAcademy provides tailored training programs and workshops to upskill businesses and individuals.",
       image: "/images/projects/ACADEMY.png",
       backgroundColor: "bg-gray-300",
-      textColor: "text-gray-300",
+      textColor: "text-gray-900",
     },
   ];
 
@@ -90,7 +110,9 @@ const ProductSection = () => {
   const [visibleCards, setVisibleCards] = useState(3);
   const [cardWidth, setCardWidth] = useState(320);
   const [gap, setGap] = useState(24);
+  const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const autoScrollRef = useRef<NodeJS.Timeout>();
 
   // Update visible cards and dimensions based on screen size
   useEffect(() => {
@@ -119,12 +141,55 @@ const ProductSection = () => {
     return () => window.removeEventListener("resize", updateLayout);
   }, []);
 
+  // Create a duplicated set of products for seamless looping
+  const duplicatedProducts = [...products, ...products];
+  const totalCards = products.length;
+  const totalDuplicatedCards = duplicatedProducts.length;
+
+  // Auto-scroll functionality with seamless loop
+  useEffect(() => {
+    const autoScroll = () => {
+      if (isPaused) return;
+
+      const totalCardWidth = cardWidth + gap;
+      const maxIndex = totalCards * 2; // Total duplicated items
+      const currentIndex = Math.round(-currentTranslate / totalCardWidth);
+      let nextIndex = currentIndex + 1;
+
+      // If we're at the end of the duplicated set, reset to the original position
+      // without animation to create a seamless loop
+      if (nextIndex >= totalCards) {
+        // Jump to the equivalent position in the first set without animation
+        setCurrentTranslate(0);
+        // Schedule the next move to continue the animation
+        setTimeout(() => {
+          setCurrentTranslate(-(nextIndex - totalCards) * totalCardWidth);
+        }, 10);
+      } else {
+        // Otherwise, move to the next card
+        setCurrentTranslate(-nextIndex * totalCardWidth);
+      }
+    };
+
+    autoScrollRef.current = setInterval(autoScroll, 3000);
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    };
+  }, [currentTranslate, isPaused, cardWidth, gap, totalCards]);
+
   // Reset position when layout changes
   useEffect(() => {
     setCurrentTranslate(0);
   }, [visibleCards]);
 
+  // Calculate the initial translate to start in the middle of the duplicated set
+  useEffect(() => {
+    const totalCardWidth = cardWidth + gap;
+    setCurrentTranslate(0);
+  }, [cardWidth, gap, totalCards]);
+
   const handleMouseDown = (e: React.MouseEvent) => {
+    setIsPaused(true);
     setIsDragging(true);
     setStartX(e.pageX - (carouselRef.current?.offsetLeft || 0));
     setScrollLeft(currentTranslate);
@@ -156,6 +221,8 @@ const ProductSection = () => {
     if (carouselRef.current) {
       carouselRef.current.style.cursor = "grab";
     }
+    // Resume auto-scroll after a delay when user interaction ends
+    setTimeout(() => setIsPaused(false), 5000);
 
     // Snap to nearest card
     const totalCardWidth = cardWidth + gap;
@@ -167,14 +234,16 @@ const ProductSection = () => {
     setCurrentTranslate(snapTranslate);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (e: React.MouseEvent) => {
     if (isDragging) {
       handleMouseUp();
     }
+    setIsPaused(false);
   };
 
   // Touch events for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
+    setIsPaused(true);
     setIsDragging(true);
     setStartX(e.touches[0].pageX - (carouselRef.current?.offsetLeft || 0));
     setScrollLeft(currentTranslate);
@@ -197,6 +266,8 @@ const ProductSection = () => {
 
   const handleTouchEnd = () => {
     setIsDragging(false);
+    // Resume auto-scroll after a delay when touch interaction ends
+    setTimeout(() => setIsPaused(false), 5000);
 
     const totalCardWidth = cardWidth + gap;
     const snapIndex = Math.round(-currentTranslate / totalCardWidth);
@@ -208,7 +279,10 @@ const ProductSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-800 to-gray-900 py-32 px-4 sm:px-6 lg:px-8">
+    <div
+      ref={sectionRef}
+      className="bg-gradient-to-b from-gray-800 to-gray-900 py-32 px-4 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Content */}
@@ -252,20 +326,21 @@ const ProductSection = () => {
                 className="flex cursor-grab select-none transition-transform duration-300 ease-out"
                 style={{
                   transform: `translateX(${currentTranslate}px)`,
-                  width: `${products.length * (cardWidth + gap)}px`,
+                  width: `${totalDuplicatedCards * (cardWidth + gap)}px`,
                   gap: `${gap}px`,
                 }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={handleMouseLeave}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseLeave}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
               >
-                {products.map((product) => (
+                {duplicatedProducts.map((product, index) => (
                   <div
-                    key={product.id}
+                    key={`${product.id}-${index}`}
                     className="flex-shrink-0 h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                     style={{
                       userSelect: "none",
@@ -305,7 +380,7 @@ const ProductSection = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="flex justify-center space-x-2 mt-6">
+            {/* <div className="flex justify-center space-x-2 mt-6">
               {Array.from({
                 length: Math.max(1, products.length - visibleCards + 1),
               }).map((_, index) => {
@@ -326,7 +401,7 @@ const ProductSection = () => {
                   />
                 );
               })}
-            </div>
+            </div> */}
 
             {/* Drag Hint */}
             {/* <p className="text-center text-xs lg:text-sm text-gray-500 mt-4">
