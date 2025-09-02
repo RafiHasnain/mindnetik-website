@@ -5,11 +5,13 @@ import {
   Linkedin,
   Instagram,
   Twitter,
+  ArrowRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import ContactForm from "@/components/ui/ContactForm";
 
 const ContactPage = () => {
   const contactInfo = [
@@ -65,7 +67,7 @@ const ContactPage = () => {
               <h2 className="text-3xl font-bold mb-6 bg-white bg-clip-text text-transparent">
                 Send us a Message
               </h2>
-              <Card className="bg-gray-900 border-gray-700">
+              {/* <Card className="bg-gray-900 border-gray-700">
                 <CardContent className="p-8">
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -130,7 +132,8 @@ const ContactPage = () => {
                     </Button>
                   </form>
                 </CardContent>
-              </Card>
+              </Card> */}
+              <ContactForm />
             </div>
 
             {/* Contact Information */}
