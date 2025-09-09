@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 const ProductSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -171,7 +172,7 @@ const ProductSection = () => {
       }
     };
 
-    autoScrollRef.current = setInterval(autoScroll, 3000);
+    autoScrollRef.current = setInterval(autoScroll, 1500);
     return () => {
       if (autoScrollRef.current) clearInterval(autoScrollRef.current);
     };
@@ -181,6 +182,35 @@ const ProductSection = () => {
   useEffect(() => {
     setCurrentTranslate(0);
   }, [visibleCards]);
+
+  // Navigate to next/previous card
+  const navigate = (direction: "prev" | "next") => {
+    const totalCardWidth = cardWidth + gap;
+    let newTranslate = currentTranslate;
+
+    if (direction === "next") {
+      newTranslate = currentTranslate - totalCardWidth;
+      const maxTranslate = -totalCardWidth * (totalCards - 1);
+      if (newTranslate < maxTranslate) {
+        newTranslate = 0; // Loop back to start
+      }
+    } else {
+      newTranslate = currentTranslate + totalCardWidth;
+      if (newTranslate > 0) {
+        newTranslate = -totalCardWidth * (totalCards - 1); // Loop to end
+      }
+    }
+
+    setCurrentTranslate(newTranslate);
+    setIsPaused(true);
+
+    // Auto-resume after navigation
+    const timeout = setTimeout(() => {
+      setIsPaused(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  };
 
   // Calculate the initial translate to start in the middle of the duplicated set
   useEffect(() => {
@@ -403,10 +433,27 @@ const ProductSection = () => {
               })}
             </div> */}
 
-            {/* Drag Hint */}
-            {/* <p className="text-center text-xs lg:text-sm text-gray-500 mt-4">
-              Drag to explore more projects
-            </p> */}
+            {/* Navigation Arrows */}
+            <div className="mt-10 flex justify-end space-x-2 pr-2">
+              <Button
+                variant="outline"
+                size="icon"
+                className="bg-primary border-primary rounded-full w-10 h-10 hover:bg-secondary hover:border-secondary transition-colors"
+                onClick={() => navigate("prev")}
+                aria-label="Previous product"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="bg-primary border-primary rounded-full w-10 h-10 hover:bg-secondary hover:border-secondary transition-colors"
+                onClick={() => navigate("next")}
+                aria-label="Next product"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
