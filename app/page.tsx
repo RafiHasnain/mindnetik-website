@@ -58,7 +58,7 @@ const HomePage = () => {
 
       <TechStackSection />
 
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* <Marquee title="Our Achievements" logos={logos} /> */}
       <Achievements />

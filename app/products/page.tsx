@@ -25,7 +25,9 @@ const ProductsPage = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = productRefs.current.findIndex((ref) => ref === entry.target);
+            const index = productRefs.current.findIndex(
+              (ref) => ref === entry.target
+            );
             if (index !== -1) {
               setVisibleProducts((prev) => {
                 const newVisible = [...prev];
@@ -125,9 +127,9 @@ const ProductsPage = () => {
       ],
     },
     {
-      title: "MindGATE",
+      title: "MindStage",
       description:
-        "MindGate revolutionizes digital events through interactive, immersive experiences.",
+        "MindStage revolutionizes digital events through interactive, immersive experiences.",
       image: "/images/projects/GATE.png",
       features: [
         "3D Interactive Avatars and Customizable Venues",
@@ -216,7 +218,9 @@ const ProductsPage = () => {
               }
             }}
             className={`group transition-all duration-700 ${
-              visibleProducts[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              visibleProducts[index]
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: `${index * 150}ms` }}
           >

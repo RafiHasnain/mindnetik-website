@@ -62,9 +62,9 @@ const ProductSection = () => {
     },
     {
       id: 5,
-      title: "MindGATE",
+      title: "MindStage",
       description:
-        "MindGate revolutionizes digital events through interactive, immersive experiences.",
+        "MindStage revolutionizes digital events through interactive, immersive experiences.",
       image: "/images/projects/GATE.png",
       backgroundColor: "bg-secondary/50",
       textColor: "text-gray-300",
