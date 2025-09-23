@@ -44,7 +44,7 @@ const HomePage = () => {
         isMain
       />
 
-      <Marquee title="Our Partners" logos={logos} />
+      {/* <Marquee title="Our Partners" logos={logos} /> */}
 
       <AboutSection />
 
@@ -58,10 +58,10 @@ const HomePage = () => {
 
       <TechStackSection />
 
-      {/* <TestimonialSection /> */}
+      <TestimonialSection />
 
       {/* <Marquee title="Our Achievements" logos={logos} /> */}
-      <Achievements />
+      {/* <Achievements /> */}
 
       <Faq />
 
